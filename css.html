@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <link rel="stylesheet" crossorigin="" href="css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/klachtml.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <section class="main__catalog catalog">
+                  <div class="catalog__container">
+                    <div class="catalog__body">
+                      <div class="catalog__header">
+                        <h1 class="catalog__title">( CSS )</h1>
+                      </div>
+                      <div class="content">
+                        <div class="inner-content">
+                          <h3>Текст</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-align: center;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Выравнивание текста по центру;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-align: left;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Выравнивание текста по левому краю;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-align:right;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Выравнивание текста по правому краю;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-decoration: none;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Текст без подчёркивания;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-decoration: underline;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Подчёркнутый текст;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-decoration: overline</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Черта над текстом;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-decoration: line-through;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Зачёркнутый текст;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-decoration: blink;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Мигающий текст;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-transform: uppercase;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает все буквы заглавными;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-transform: capitalize;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает все первые буквы заглавными;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-indent: 30px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Красная строка;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">word-spacing: 30px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт расстояние между словами;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">letter-spacing: 2px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт расстояние между буквами;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">line-height: 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт фиксированную высоту строки;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">direction: rtl;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт направление; текста справа налево.</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">color: #00ff00;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Цвет текста;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">text-schadow</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Тень текста;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Шрифт</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-style: italic;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Шрифт курсив;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-weight: bold;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Жирный шрифт;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-weight: lighter;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Тонкий шрифт;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-size: 16px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Размер шрифта;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-family: Georgia;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Название шрифта;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font-variant: small-caps;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает все буквы прописными;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">font: italic bold 16px Georgia;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для свойства font.</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Внешние и внутренние отступы</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">margin-top: 20px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внешний отступ сверху;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">margin-right: 20px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внешний отступ справа;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">margin-bottom: 20px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внешний отступ снизу;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">margin-left: 20px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внешний отступ слева;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">margin: 20px 20px 20px 20px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Сокращённая запись для внешних отступов, первая цифра отступ сверху, и далее
+                                  по
+                                  часовой
+                                  стрелке;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">padding-top: 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внутренний отступ сверху;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">padding-right: 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внутренний отступ справа;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">padding-bottom: 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внутренний отступ снизу;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">padding-left: 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Внутренний отступ слева;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">padding: 10px 10px 10px 10px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для свойства padding, расположение аналогично margin.
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Свойства фона</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-color: #00ff00;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Цвет фона элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-position: center;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Размещает фоновое изображение по центру;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-position: 100px 150px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Размещает фоновое изображение, первая цифра — отступ сверху (top), вторая —
+                                  отступ слева
+                                  left;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-repeat: repeat;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Изображение повторяется пока не займёт всё пространство блока;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-repeat: no-repeat;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Изображение не повторяется;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-repeat: repeat-y;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Изображение повторяется по вертикали;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-repeat: repeat-x;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Изображение повторяется по горизонтали;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-attachment: fixed;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Изображение фиксируется и остаётся на месте при прокрутке страницы;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-image: url(images/im.webp);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Вставляет изображение в элемент;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background: #00ff00 url(images/im.webp) no-repeat fixed center;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для background;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">background-size:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Масштабирует фоновое изображение;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Ширина и высота</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">width: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Ширина элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">min-width: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Минимальная ширина элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">max-width: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Максимальная ширина элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">height: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Высота элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">min-height: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Минимальная высота элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">max-height: 100px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Максимальная высота элемента;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Рамки</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">border: 3px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Рамка элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">border-color:#ff0000;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Цвет рамки;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">border-style: solid;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Стиль рамки;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">border: 5px solid #ff0000;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для рамки;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">outline: 5px solid #00FF00;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт рамку за внешней границей элемента;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">border-radius: #00FF00 25px;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Создаёт рамку с закруглёнными углами вокруг элемента;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Свойства списка</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">list-style-type:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Определяет вид маркера в списке. Применяемые значения:
+                                  <br>
+                                  none — без маркера;
+                                  <br>
+                                  circle — круг;
+                                  <br>
+                                  disc — заполненный круг;
+                                  <br>
+                                  square — квадрат;
+                                  <br>
+                                  upper-alpha — A B C D …;
+                                  <br>
+                                  upper-roman — I II III IV V …;
+                                  <br>
+                                  lower-alpha — a b c d …;
+                                  <br>
+                                  decimal-leading-zero — 01 02 03 04 …;
+                                  <br>
+                                  none — отменяет маркер.
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">list-style-image: url(images/im.webp);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Устанавливает маркер-изображение;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">list-style-position: inside;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Размещает маркер-изображение внутри блока списка;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">list-style: square inside url(images/im.webp);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Сокращение записи для list-style, square указывается на случай недоступности
+                                  картинки;
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Позиционирование</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">position: absolute;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Размещает элемент относительно границ экрана монитора. Применяется со
+                                  свойствами:
+                                  top:,
+                                  left:, right:, bottom:, в которых указываются координаты позиционирования
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">position: relative;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Применяется к элементу, относительно которого позиционируется другой
+                                  элемент;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">position: fixed;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Фиксирует элемент в указанной части экрана. Элемент не реагирует на
+                                  прокрутку</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">x-index: ;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Накладывает элементы друг на друга по оси х;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">y-index: ;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Накладывает элементы друг на друга по оси у;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">z-index: ;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Накладывает элементы друг на друга по оси z;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">float: right;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт обтекание слева;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">float: left;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт обтекание справа;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">clear: both;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Запрещает обтекание;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">clip: rect(10px,50px);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Обрезает изображение квадратом;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Видимость</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">visibility: hidden;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает элемент невидимым, но сохраняет занимаемое им место;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">display: none;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Временно удаляет элемент со страницы, и другие элементы могут занять его
+                                  место;
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">display: block;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает элемент блочным;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">display: inline;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает элемент встроенным;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">display: inline-block;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает элемент встроенным, но с ддоступными свойствами блочного;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">overflow: auto;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">При необходимости добавляет полосу прокрутки в блок с контентом;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">opacity: 0;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Делает элемент полностью прозрачным. Прозрачность уменьшается до
+                                  значения 1;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Трансформация и анимация</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">поворачивает, сдвигает, наклоняет и масштабирует элемент.</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: scale();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Масштабирует элемент по горизонтали и вертикали. Число в скобках больше
+                                  единицы
+                                  увеличивает;
+                                  элемент, а меньше единицы —
+                                  уменьшает
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: scaleX();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Масштабирует элемент по горизонтали;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: scaleY();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Масштабирует элемент по вертикали</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: skewX();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Наклоняет элемент на заданный угол в скобках по вертикали влево,
+                                  отрицательное
+                                  значение —
+                                  вправо
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: skewY();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Наклоняет элемент на заданный угол по горизонтали;</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: translateX();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сдвигает элемент по горизонтали</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: translateY();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сдвигает элемент по вертикали</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: rotate();</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Поворот элемента вокруг центра на заданный угол</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: rotateY(360deg);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Поворот элемента вокруг вертикальной оси. Применяется в 3D</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: rotateX(360deg);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Поворот элемента вокруг горизонтальной оси. Применяется в 3D</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform: matrix()</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Создаёт эффект отражения элемента</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform-style: preserve-3d</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Создаёт 3D эффект</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transform-origin: x y z;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Задаёт координаты точки относительно центра, вокруг которой будет вращаться
+                                  элемент
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transition-property:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Определяет свойство, которое будет анимироваться</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transition-duration:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Продолжительность эффекта перехода</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transition-timing-function:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Скорость эффекта перехода</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transition-delay:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задержка начала анимации</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">transition: left 3s ease;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для transition</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Pадаёт параметры действия для анимации — длительность анимации, повторение,
+                                  направление, тип
+                                  движения, шаги. Работает со
+                                  свойством @keyframes
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation-name</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Имя анимации</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation-duration</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Длительность анимации</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation-timing-function</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Определяет вид анимации</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation-iteration-count</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт число повторений анимации</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">Animation-direction</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт направление движения</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation-delay</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Задаёт задержку анимации перед началом воспроизведения</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">animation: nev 5s infinite alternate;</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Сокращение записи для animation</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">@keyframes</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Правило, записывается как селектор, внутрь которого помещаются селекторы
+                                  последовательно
+                                  определяющие состояние элемента
+                                  в определённый момент
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <h3>Добавление элементов без html</h3>
+                          <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                            <tbody>
+                              <tr>
+                                <th valign="top" width="25%">Атрибут</th>
+                                <!-- <th valign="top" width="20%">Значение</th> -->
+                                <th valign="top" width="60%">Описание</th>
+                              </tr>
+                              <tr>
+                                <td valign="top">content:</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  Выводит на страницу элементы, которых нет в html коде. Применяется с
+                                  псевдоклассами ::after и
+                                  ::before
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">content:" "</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">В кавычки можно добавить текст и он будет выведен на страницу</td>
+                              </tr>
+                              <tr>
+                                <td valign="top">content:attr( );</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">
+                                  В скобки обычно добавляется спецсимвол html, изображение которого и выводится
+                                  в
+                                  начале или в
+                                  конце элемента
+                                </td>
+                              </tr>
+                              <tr>
+                                <td valign="top">content: url(images/1.webp);</td>
+                                <!-- <td valign="top"><em>скрипт</em></td> -->
+                                <td valign="top">Выводит картинку в начале или в конце элемента. Обычно маркер списка.
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

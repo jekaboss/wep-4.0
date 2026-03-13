@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+  <link rel="stylesheet" crossorigin="" href="./css/addphp.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <div class="tabs__body tabs__body-wp">
+                  <a href="https://techblog.sdstudio.top/polnaja-shpargalka-po-wordpress/" target="_blank">Полная
+                    шпаргалка по
+                    WordPress</a>
+                  <a href="https://anton.shevchuk.name/wp-content/uploads/2008/09/wordpress_-_template_designer_cheatsheet_ru.pdf"
+                    target="_blank">Download русская версия WordPress шпаргалка</a>
+                  <a href="https://hostiq.ua/wiki/ukr/wordpress-guide/?gad_source=1&gad_campaignid=22221308613&gbraid=0AAAAAC7A2B-N2a2Mnn6peNa9StR-OLl6y&gclid=Cj0KCQjw953DBhCyARIsANhIZobtHHFDQpFlYA4pEvyMNh80uudWhFQdEryx0HOKIwBZZjsV29LfX1kaAg1gEALw_wcB"
+                    target="_blank">Інструкція зі створення сайту на WordPress</a>
+                </div>
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+                <br>
+                <div class="tabs__body tabs__body-wp">
+                  <h1>Codex для разработки темы на WordPress</h1>
+                  <p>Відео материал (10 часов - 45 минут)</p>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33793656#overview"
+                    target="_blank">Установка WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33800888#overview"
+                    target="_blank">Стартовая тема для WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801144#overview"
+                    target="_blank">Иерархия файлов WordPress темы</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801344#overview"
+                    target="_blank">Подключение файлов/PHP кода</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801366#overview"
+                    target="_blank">Подключение CSS стилей и JS скриптов</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801390#overview"
+                    target="_blank">Хуки
+                    для Шапки и Подвала</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801392#overview"
+                    target="_blank">Реализация навигации. Админка и Фронт</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801394#overview"
+                    target="_blank">Реализация формы поиска</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801398#overview"
+                    target="_blank">Безопасный вывод данных (Escaping)</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801402#overview"
+                    target="_blank">Подготовка файлов темы к переводу</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801404#overview"
+                    target="_blank">Шаблоны
+                    для страниц (Custom Page Templates)</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801408#overview"
+                    target="_blank">Вывод
+                    постов в цикле</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801410#overview"
+                    target="_blank">Регистрация Post Type. #1</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801412#overview"
+                    target="_blank">Регистрация Post Type. #2</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801416#overview"
+                    target="_blank">Шаблон
+                    архивной и сингл страниц для Post Type</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801418#overview"
+                    target="_blank">Регистрация Taxonomy</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801422#overview"
+                    target="_blank">Шаблон
+                    архивной страницы для Taxonomy</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801424#overview"
+                    target="_blank">Регистрация и вывод сайдбара</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801426#overview"
+                    target="_blank">Разработка виджета для сайдбара</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801430#overview"
+                    target="_blank">Класс
+                    WP_Query</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801432#overview"
+                    target="_blank">Пагинация для архивных страниц</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801434#overview"
+                    target="_blank">Персональная пагинация</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801472#overview"
+                    target="_blank">Дочерняя тема на WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801476#overview"
+                    target="_blank">Медиа-файлы и персональные размеры для картинок</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801480#overview"
+                    target="_blank">Произвольные поля. Мета-боксы хуком</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801482#overview"
+                    target="_blank">Подключение необходимых плагинов к теме</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801484#overview"
+                    target="_blank">Мета-боксы через плагин</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801490#overview"
+                    target="_blank">Options
+                    Настройки</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801494#overview"
+                    target="_blank">Разработка Core плагина для темы</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801500#overview"
+                    target="_blank">Ajax на
+                    WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801510#overview"
+                    target="_blank">Виджет
+                    для Elementor</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801520#overview"
+                    target="_blank">Шорткод
+                    для WPBakery</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801530#overview"
+                    target="_blank">Персональный блок для Gutenberg</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801600#overview"
+                    target="_blank">Блок
+                    комментариев на WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801604#overview"
+                    target="_blank">Список
+                    Хуков в WordPress</a>
+                  <br>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33801610#overview"
+                    target="_blank">Монетизация навыков Pазработки Тем под WordPress</a>
+                  <br>
+                </div>
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

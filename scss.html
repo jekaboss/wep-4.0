@@ -1,0 +1,1565 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <script type="module" crossorigin="" src="./js/tabs2.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="./css/scss.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <div data-fls-tabs="" class="blo">
+                  <nav data-fls-tabs-titles="" class="blo__navigation">
+                    <button type="button" class="blo__title --tab-active">Основы</button>
+                    <button type="button" class="blo__title">Нотатки</button>
+                    <!-- <button type="button" class="blo__title">Таб №3</button> -->
+                  </nav>
+                  <div data-fls-tabs-body="" class="blo__content">
+                    <!-- ================= Основы  ======================== -->
+                    <div class="blo__body">
+                      <div class="inner__scss">
+                        <div class="inner__scss-scss">
+                          <h2>Препроцессинг</h2>
+                          <p>
+                            Написание CSS само по себе весело, но когда таблица стилей становится огромной, то
+                            становится и сложно её
+                            обслуживать. И
+                            вот в таком случае нам поможет препроцессор. Sass позволяет использовать функции недоступные
+                            в самом CSS,
+                            например,
+                            переменные, вложенности, миксины, наследование и другие приятные вещи, возвращающие удобство
+                            написания CSS.
+                          </p>
+                          <p>
+                            Как только Вы начинаете пользоваться Sass, препроцессор обрабатывает ваш Sass-файл и
+                            сохраняет его как простой
+                            CSS-файл,
+                            который Вы сможете использовать на любом сайте.
+                          </p>
+                          <p>
+                            Самый простой способ получить такой результат - использовать терминал. После того, как Sass
+                            установлен, вы можете
+                            компилировать ваш Sass в CSS, используя команду sass. Вам всего лишь нужно сообщить Sass,
+                            где взять файл Sass и в
+                            какой
+                            файл CSS его скомпилировать. Например, запустив команду sass input.scss
+                            output.css?v=1751815721684 в
+                            терминале, вы сообщаете Sass
+                            взять
+                            один Sass файл, input.scss, и скомпилировать в файл output.css?v=1751815721684.
+                          </p>
+                          <p>
+                            Также, вы можете следить за изменениями только определенных файлов или папок, используя флаг
+                            --watch. Данный флаг
+                            сообщает Sass, что необходимо следить за изменениями указанных файлов и при наличии таковых
+                            производить
+                            перекомпиляцию
+                            CSS после сохранения файлов. Если вы хотите отслеживать изменения (вместо ручной
+                            перекомпиляции) вашего файла,
+                            например,
+                            input.scss, то вам необходимо просто добавить флаг в команду:
+                          </p>
+                          <p>sass –watch input.scss output.css?v=1751815721684</p>
+                          <p>
+                            Вы также можете указать папки для отслеживания изменений и куда сохранять компилированные
+                            CSS файлы, для этого
+                            достаточно указать пути и разделить их двоеточием, например:
+                          </p>
+                          <p class="sass">sass --watch app/sass:public/stylesheets</p>
+                          <p>
+                            Sass будет отслеживать все файлы в директории app/sass и компилировать CSS в директорию
+                            public/stylesheets.
+                          </p>
+                          <h2>Переменные</h2>
+                          <p>
+                            Думайте о переменных, как о способе хранения информации, которую вы хотите использовать на
+                            протяжении написания всех
+                            стилей проекта. Вы можете хранить в переменных цвета, стеки шрифтов или любые другие
+                            значения CSS, которые вы хотите
+                            использовать. Чтобы создать переменную в Sass нужно использовать символ $. Рассмотрим
+                            пример:
+                          </p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		$font-stack: Helvetica, sans-serif;
+																		<br>
+																		$primary-color: #333;
+																		<br>
+																		<br>
+																		<span class="b">body</span>
+																		{
+																		<br>
+																		<span class="f">font</span>
+																		:
+																		<span class="h">100% $font-stack</span>
+																		<br>
+																		<span class="f">color</span>
+																		:
+																		<span class="h">$primary-color</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">body</span>
+																		{
+																		<br>
+																		<span class="f">font</span>
+																		:
+																		<span class="h">100% Helvetica, sans-serif</span>
+																		<br>
+																		<span class="f">color</span>
+																		:
+																		<span class="h">#333</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            Когда Sass обрабатывается, он принимает значения, заданные нами в $font-stack и
+                            $primary-color и вставляет их в обычном
+                            CSS-файле в тех местах, где мы указывали переменные как значения. Таким образом переменные
+                            становятся мощнейшей
+                            возможностью, например, при работе с фирменными цветами, используемыми на всем сайте.
+                          </p>
+                          <h2>Вложенности</h2>
+                          <p>
+                            При написании HTML, Вы, наверное, заметили, что он имеет четкую вложенную и визуальную
+                            иерархию. С CSS это не так.
+                          </p>
+                          <p>
+                            Sass позволит вам вкладывать CSS селекторы таким же образом, как и в визуальной иерархии
+                            HTML. Но помните, что
+                            чрезмерное количество вложенностей делает ваш документ менее читабельным и воспринимаемым,
+                            что считается плохой
+                            практикой.
+                          </p>
+                          <p>
+                            Чтобы понять что мы имеем ввиду, приведем типичный пример стилей навигации на сайте:
+                          </p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		<span class="b">nav</span>
+																		{
+																		<br>
+																		<br>
+																		<span class="b">ul</span>
+																		{
+																		<br>
+																		<span class="f">margin</span>
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">list-style</span>
+																		<span class="h">none</span>
+																		<br>
+																		}
+																		<br>
+																		<span class="b">li</span>
+																		{
+																		<br>
+																		<span class="f">display</span>
+																		<span class="h">inline-block</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">a</span>
+																		{
+																		<br>
+																		<span class="f">display</span>
+																		:
+																		<span class="h">block</span>
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">6px 12px</span>
+																		<br>
+																		<span class="f">text-decoration</span>
+																		:
+																		<span class="h">none</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">nav ul</span>
+																		{
+																		<br>
+																		<span class="f">margin</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">list-style</span>
+																		<span class="h">none</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">nav li</span>
+																		{
+																		<br>
+																		<span class="f">display</span>
+																		:
+																		<span class="h">inline-block</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">nav a</span>
+																		{
+																		<br>
+																		<span class="f">display</span>
+																		:
+																		<span class="h">block</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">6px 12px</span>
+																		;
+																		<br>
+																		<span class="f">text-decoration</span>
+																		:
+																		<span class="h">none</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            Вы заметили, что селекторы ul, li, и a являются вложенными в селектор nav? Это отличный
+                            способ сделать ваш CSS-файл
+                            более читабельным. Когда вы сгенерируете CSS-файл, то на выходе вы получите что-то вроде
+                            этого:
+                          </p>
+                          <h2>Фрагментирование</h2>
+                          <p>
+                            Вы можете создавать фрагменты Sass-файла, которые будут содержать в себе небольшие отрывки
+                            CSS, которые можно будет
+                            использовать в других Sass-файлах. Это отличный способ сделать ваш CSS модульным, а также
+                            облегчить его обслуживание.
+                            Фрагмент — это простой Sass-файл, имя которого начинается с нижнего подчеркивания, например,
+                            _partial.scss. Нижнее
+                            подчеркивание в имени Sass-файла говорит компилятору о том, что это только фрагмент и он не
+                            должен компилироваться в
+                            CSS. Фрагменты Sass подключаются при помощи директивы @import.
+                          </p>
+                          <h2>Импорт</h2>
+                          <p>
+                            CSS имеет возможность импорта, которая позволяет разделить ваш CSS-файл на более мелкие и
+                            облегчить@import, то в CSS
+                            создается еще один HTTP-запрос. Sass берет идею импорта файлов через директиву @import, но
+                            вместо создания отдельного
+                            HTTP-запроса Sass импортирует указанный в директиве файл в тот, где он вызывается, т.е. на
+                            выходе получается один
+                            CSS-файл, скомпилированный из нескольких фрагментов.
+                          </p>
+                          <p>
+                            Например, у вас есть несколько фрагментов Sass-файлов — _reset.scss и base.scss. И мы хотим
+                            импортировать
+                          </p>
+                          <p class="sass">_reset.scss в base.scss.</p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		// _reset.scss
+																		<br>
+																		<span class="b">
+																			html,
+																			<br>
+																			body,
+																			<br>
+																			ul,
+																			<br>
+																			ol
+																		</span>
+																		{
+																		<br>
+																		<span class="f">margin</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		// base.scss
+																		<br>
+																		<span class="s">@import 'reset';</span>
+																		<br>
+																		<span class="b">body</span>
+																		{
+																		<br>
+																		<span class="f">font</span>
+																		:
+																		<span class="h">100% Helvetica, sans-serif</span>
+																		;
+																		<br>
+																		<span class="f">background-color</span>
+																		:
+																		<span class="h">#efefef</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">html,</span>
+																		<br>
+																		<span class="b">body,</span>
+																		<br>
+																		<span class="b">ul,</span>
+																		<br>
+																		<span class="b">ol</span>
+																		{
+																		<br>
+																		<span class="f">margin</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">0</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">body</span>
+																		{
+																		<br>
+																		<span class="f">font</span>
+																		:
+																		<span class="h">100% Helvetica, sans-serif</span>
+																		;
+																		<br>
+																		<span class="f">background-color</span>
+																		:
+																		<span class="h">#efefef</span>
+																		;
+																	}
+																		<br>
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            Обратите внимание на то, что мы используем @import 'reset'; в base.scss файле. Когда вы
+                            импортируете файл, то не нужно
+                            указывать расширение .scss. Sass — умный язык и он сам догадается.
+                          </p>
+                          <h2>Миксины (примеси)</h2>
+                          <p>
+                            Некоторые вещи в CSS весьма утомительно писать, особенно в CSS3, где плюс ко всему зачастую
+                            требуется использовать
+                            большое количество вендорных префиксов. Миксины позволяют создавать группы деклараций CSS,
+                            которые вам придется
+                            использовать по нескольку раз на сайте. Вы даже можете передавать переменные в миксины,
+                            чтобы сделать их более гибкими.
+                            Так же хорошо использовать миксины для вендорных префиксов. Пример для transform:
+                          </p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		<span class="b">@mixin transform($property)</span>
+																		{
+																		<br>
+																		<span class="h">-webkit-transform: $property</span>
+																		;
+																		<br>
+																		<span class="h">-ms-transform: $property;</span>
+																		;
+																		<br>
+																		<span class="f">transform</span>
+																		:
+																		<span class="h">$property</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">.box</span>
+																		{
+																		<br>
+																		<span class="h">@include transform(rotate(30deg))</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">.box</span>
+																		<br>
+																		<span class="f">-webkit-transform</span>
+																		:
+																		<span class="h">rotate(30deg)</span>
+																		;
+																		<br>
+																		<span class="f">-ms-transform</span>
+																		:
+																		<span class="h">rotate(30deg)</span>
+																		;
+																		<br>
+																		<span class="f">transform</span>
+																		:
+																		<span class="h">rotate(30deg)</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            To create a mixin you use the @mixin directive and give it a name. We've named our mixin
+                            transform. We're also using the
+                            variable $property inside the parentheses so we can pass in a transform of whatever we want.
+                            After you create your
+                            mixin, you can then use it as a CSS declaration starting with @include followed by the name
+                            of the mixin.
+                          </p>
+                          <h2>Расширение/Наследование</h2>
+                          <p>
+                            Это одна из самых полезных функций Sass. Используя директиву @extend можно наследовать
+                            наборы свойств CSS от одного
+                            селектора другому. Это позволяет держать ваш Sass-файл в «чистоте». В нашем примере мы
+                            покажем вам как сделать стили
+                            оповещений об ошибках, предупреждениях и удачных исходах, используя другие возможности Sass,
+                            которые идут рука-об-руку с
+                            расширением, классами-шаблонами. Класс-шаблон - особый тип классов, который выводится только
+                            при использовании
+                            расширения - это позволит сохранить ваш скомпилированный CSS чистым и аккуратным.
+                          </p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		/* This CSS will print because %message-shared is extended. */
+																		<br>
+																		<span class="b">%message-shared</span>
+																		{
+																		<br>
+																		<span class="f">border</span>
+																		:
+																		<span class="h">1px solid #ccc</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">10px</span>
+																		;
+																		<br>
+																		<span class="f">color</span>
+																		:
+																		<span class="h">#333</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">.box</span>
+																		{
+																		<br>
+																		<span class="h">@include transform(rotate(30deg))</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		// This CSS won't print because %equal-heights is never extended.
+																		<br>
+																		<span class="b">%equal-heights</span>
+																		{
+																		<br>
+																		<span class="f">display</span>
+																		:
+																		<span class="h">flex</span>
+																		;
+																		<br>
+																		<span class="f">flex-wrap</span>
+																		:
+																		<span class="h">wrap</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">.message</span>
+																		{
+																		<br>
+																		<span class="h">@extend %message-shared</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.success</span>
+																		{
+																		<br>
+																		<span class="h">@extend %message-shared</span>
+																		;
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">green</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.message</span>
+																		{
+																		<br>
+																		<span class="h">@extend %message-shared</span>
+																		;
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">red</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.message</span>
+																		{
+																		<br>
+																		<span class="h">@extend %message-shared</span>
+																		;
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">yellow</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">.message, .success, .error, .warning</span>
+																		{
+																		<br>
+																		<span class="f">border</span>
+																		:
+																		<span class="h">1px solid #ccc</span>
+																		;
+																		<br>
+																		<span class="f">padding</span>
+																		:
+																		<span class="h">10px</span>
+																		;
+																		<br>
+																		<span class="f">color</span>
+																		:
+																		<span class="h">#333</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.success</span>
+																		{
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">green</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.error</span>
+																		{
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">red</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<span class="b">.warning</span>
+																		{
+																		<br>
+																		<span class="f">border-color</span>
+																		:
+																		<span class="h">yellow</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            Вышеуказанный код сообщает классам .message, .success, .error и .warning вести себя как
+                            %message-shared. Это означает,
+                            что где бы не вызывался %message-shared, то и .message, .success, .error и .warning тоже
+                            будут вызваны. Магия происходит
+                            в сгенерированном CSS, где каждый из этих классов получает css-свойства, как и
+                            %message-shared. Это позволит вам
+                            избежать написания множества классов в HTML элементах.
+                          </p>
+                          <p>
+                            Вы можете расширить большинство простых CSS селекторов прибавление к классам-шаблонам в
+                            Sass, однако, использование
+                            шаблонов - простейший способ быть уверенным, что вы не расширяете класс везде, где он
+                            используется в ваших стилях, что
+                            могло бы привести к непреднамеренным наборам стилей в вашем CSS.
+                          </p>
+                          <p>
+                            Когда вы генерируете ваш CSS, то он будет выглядеть как пример ниже. Обратите внимание,
+                            %equal-heights не попадает в
+                            CSS, так как ни разу не был использован.
+                          </p>
+                          <h2>Математические операторы</h2>
+                          <p>
+                            Использовать математику в CSS очень полезно. Sass имеет несколько стандартных математических
+                            операторов, таких как +, -,
+                            *, / и %. В нашем примере мы совершаем простые математические вычисления для расчета ширины
+                            aside и article.
+                          </p>
+                          <div class="code">
+                            <div class="m">
+                              <h2>scss</h2>
+                              <p>
+                                <code>
+																		<span class="b">.container</span>
+																		{
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">100%</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">article[role="main"]</span>
+																		{
+																		<br>
+																		<span class="f">float</span>
+																		:
+																		<span class="h">left</span>
+																		;
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">600px / 960px * 100%</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">aside[role="complementary"]</span>
+																		{
+																		<br>
+																		<span class="f">float</span>
+																		:
+																		<span class="h">right</span>
+																		;
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">300px / 960px * 100%</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                            <div class="m">
+                              <h2>css</h2>
+                              <p>
+                                <code>
+																		<span class="b">.container</span>
+																		{
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">100%</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">article[role="main"]</span>
+																		{
+																		<br>
+																		<span class="f">float</span>
+																		:
+																		<span class="h">left</span>
+																		;
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">62.5%</span>
+																		;
+																		<br>
+																		}
+																		<br>
+																		<br>
+																		<span class="b">aside[role="complementary"]</span>
+																		{
+																		<br>
+																		<span class="f">float</span>
+																		:
+																		<span class="h">right</span>
+																		;
+																		<br>
+																		<span class="f">width</span>
+																		:
+																		<span class="h">31.25%</span>
+																		;
+																		<br>
+																		}
+																	</code>
+                              </p>
+                            </div>
+                          </div>
+                          <p>
+                            Мы создали простую адаптивную модульную сетку, с шириной в 960 пикселей. Используя
+                            математические операторы, мы
+                            использовали полученные данные с пиксельными значениями и конвертировали их в процентные,
+                            причем без особых усилий.
+                            Скомпилированный CSS выглядит так:
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- ================= Нотатки  ======================== -->
+                    <div class="blo__body">
+                      <div class="tabs__body">
+                        <!-- ================= Нотатки  ============================ -->
+                        <p class="sass">Препроцесор SCSS</p>
+                        <h2 class="h2">SCSS розшифровується як — Sassy CSS</h2>
+                        <p>
+                          Спочатку зʼявився препроцесор SASS, який був важким для розуміння розробників через новий
+                          синтаксис, а потім його
+                          варіація — SCSS яка була зрозуміліша через подібний до CSS синтаксис.
+                        </p>
+                        <p>
+                          Надав можливість використовувати примітивну мову програмування в css та спростити код:
+                        </p>
+                        <h2 class="h2 code-h2">зручно використовувати змінні:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// приклад змінної для фонового кольору,
+																	<br>
+																	// (ЗГІДНО З ПРАВИЛ ІМЕНА ЗМІННИХ ПОВИННІ ПОЧИНАТИСЬ З ЛІТЕРИ ПІСЛЯ ЗНАКУ "$")
+																	<br>
+																	<span class="b">$main-bg: #ooo;</span>
+																	<br>
+																	<br>
+																	<br>
+																	// використання змінної для відображення фонового кольору
+																	<br>
+																	<span class="b">body</span>
+																	{
+																	<br>
+																	<span class="f">background-color</span>
+																	:
+																	<span class="h">$color</span>
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">вкладеність:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// приклад вкладеності в якому відбувається звернення до усіх span в блоці block
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">background-color</span>
+																	:
+																	<span class="h">#fff</span>
+																	<br>
+																	<span class="b">span</span>
+																	{
+																	<br>
+																	<span class="f">color</span>
+																	:
+																	<span class="h">red</span>
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">взаємодія з БЕМ:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// при копіюванні класів з методологією БЕМ елементи блоку відносяться до блоку та мають запис
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">&__body</span>
+																	{
+																	<br>
+																	}
+																	<br>
+																	<span class="f">&__text</span>
+																	{
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">клас з класом:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// звернення до елементу .block у якого є клас .page__body
+																	<br>
+																	// вигляд у html class="block page__body"
+																	<br>
+																	// запис повинен бути без пробілів між класами
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">&.page__body</span>
+																	{
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">клас у батьківського елементу:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// звернення до елементу коли у батівського блоку є клас .loaded
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">.loaded &</span>
+																	{
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">медіазапити:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// приклад запису медіазапиту для .block
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">#fff</span>
+																	;
+																	<br>
+																	<span class="h">@media</span>
+																	<span class="b">(max-width: 767px;)</span>
+																	{
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">#000</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">псевдокласи та псевдоелементи:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">#fff</span>
+																	;
+																	<br>
+																	<span class="f">position:</span>
+																	<span class="h">relative</span>
+																	;
+																	<br>
+																	<span class="f">z-index:</span>
+																	<span class="h">2</span>
+																	;
+																	<br>
+																	// приклад написання псевдокласу hover всередині медіазапиту
+																	<br>
+																	<span class="h">@media</span>
+																	<span class="b">(any-hover: hover)</span>
+																	{
+																	<br>
+																	<span class="b">&:hover</span>
+																	{
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">#000</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	// приклад написання before
+																	<br>
+																	<span class="b">&::before</span>
+																	{
+																	<br>
+																	<span class="f">content:</span>
+																	<span class="h">""</span>
+																	;
+																	<br>
+																	<span class="f">display:</span>
+																	<span class="h">inline-block</span>
+																	;
+																	<br>
+																	<span class="f">position:</span>
+																	<span class="h">absolute</span>
+																	;
+																	<br>
+																	<span class="f">width:</span>
+																	<span class="h">100%</span>
+																	;
+																	<br>
+																	<span class="f">height:</span>
+																	<span class="h">100%</span>
+																	;
+																	<br>
+																	<span class="f">top:</span>
+																	<span class="h">0</span>
+																	;
+																	<br>
+																	<span class="f">left:</span>
+																	<span class="h">0</span>
+																	;
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">rgba(75, 74, 74, 0.3)</span>
+																	;
+																	<br>
+																	<span class="f">z-index:</span>
+																	<span class="h">-1</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">
+                          mixins — дозволяють повертати набір властивостей з можливістю передавати
+                          різні значення змінних:
+                        </h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// приклад міксину для встановлення колірноїї теми для блоку чи елменту
+																	<br>
+																	<span class="b">@mixin blockTheme</span>
+																	<span class="h">($color, $bg-color)</span>
+																	{
+																	<br>
+																	<span class="f">color:</span>
+																	<span class="h">$color</span>
+																	;
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">$bg-color</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	// використання міксину
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">@include blockTheme</span>
+																	<span class="h">("#000")</span>
+																	<br>
+																	// вказуємо потрібний колір який буде для шрифту та фону
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	//========================
+																	<br>
+																	// нижче код з коментарями для цього блоку
+																	<br>
+																	// Оголошення міксіна з ім'ям blockTheme, який приймає один аргумент - $color
+																	<br>
+																	<span class="b">@mixin blockTheme</span>
+																	<span class="h">($color, $bg-color)</span>
+																	{
+																	<br>
+																	// Встановлюємо колір тексту елемента, до якого буде застосовано цей міксін
+																	<br>
+																	<span class="f">color:</span>
+																	<span class="h">$color</span>
+																	;
+																	<br>
+																	// Встановлюємо колір фону елемента, до якого буде застосовано цей міксін
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">$bg-color</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	// Застосовуємо міксін blockTheme до елементів з класом .block
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	// Використовуємо директиву @include для включення міксіна blockTheme
+																	<br>
+																	// Передаємо "#fff" (чорний) як аргумент $color та "#000" (білий) як аргумент $bg-color в міксін
+																	<br>
+																	<span class="f">@include blockTheme</span>
+																	<span class="h">("#000, #fff")</span>
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	//========================
+																	<br>
+																	// другий приклад міксину для бордеру та падінгу
+																	<br>
+																	// Оголошення міксіна з ім'ям borderAndPadding, який приймає два аргументи - $border та $padding
+																	<br>
+																	<span class="b">@mixin borderAndPadding</span>
+																	<span class="h">($border, $padding)</span>
+																	{
+																	<br>
+																	// Встановлюємо рамку для елемента, до якого буде застосовано цей міксін
+																	<br>
+																	<span class="f">border:</span>
+																	<span class="h">$border</span>
+																	;
+																	<br>
+																	// Встановлюємо відступи для елемента, до якого буде застосовано цей міксін
+																	<br>
+																	<span class="f">padding:</span>
+																	<span class="h">$padding</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	// Застосовуємо міксін borderAndPadding до елементів з класом .block
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	// Використовуємо директиву @include для включення міксіна borderAndPadding
+																	<br>
+																	// Передаємо "1px solid black" як аргумент $border та "10px" як аргумент $padding в міксін
+																	<br>
+																	<span class="f">@include borderAndPadding</span>
+																	<span class="h">("1px solid black", "10px")</span>
+																	<br>
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">
+                          шаблони — міксіни без можливості передавати дані; коли часто використовуємо набір параметрів
+                          (якщо шаблон не використати
+                          в коди, то він не потрапить в кінцевий файл css):
+                        </h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	<span class="b">%black-theme</span>
+																	{
+																	<br>
+																	<span class="f">background-color:</span>
+																	<span class="h">#000</span>
+																	;
+																	<br>
+																	<span class="f">color:</span>
+																	<span class="h">#000</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">@extend</span>
+																	<span class="h">%black-theme</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">“взяти” стилі в іншого обʼєкту:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// в цьому прикладі ми беремо (наче примусово успадковуємо) стилі у елементу з класом .title
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">@extend</span>
+																	<span class="h">.title</span>
+																	;
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">коментування:</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// однорядковий коментар котрий не потрапляє в css
+																	<br>
+																	<br>
+																	/* багаторядковий коментар який потрапляє в css */
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">
+                          Функції використовуються для вирахування чогось (приклад для вираховування
+                          відсотків)
+                        </h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// підключення математичних вираховувань, потрібно додати @use "sass:math"; зверху коду
+																	<br>
+																	<span class="f">@function</span>
+																	<span class="h">percent($num1, $num2)</span>
+																	{
+																	<br>
+																	<span class="f">$rez:</span>
+																	<span class="h">math.div($num1, $num2) * 100%</span>
+																	<br>
+																	<span class="f">@return</span>
+																	<span class="h">$rez</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">width:</span>
+																	<span class="h">percent(300, 1200)</span>
+																	;
+																	<br>
+																	// відбувається обчислення (300/1200)*100=25%
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <h2 class="h2 code-h2">
+                          Функції використовуються для вирахування чогось (приклад для вираховування
+                          відсотків)
+                        </h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// підключення математичних вираховувань, потрібно додати @use "sass:math"; зверху коду
+																	<br>
+																	<span class="f">@use</span>
+																	<span class="h">"sass:math"</span>
+																	;
+																	<br>
+																	<br>
+																	<span class="b">.block</span>
+																	{
+																	<br>
+																	<span class="f">line-height:</span>
+																	<span class="h">math.div(45,20)</span>
+																	;
+																	<br>
+																	<span class="f">width:</span>
+																	<span class="h">100 * 200 + px</span>
+																	;
+																	<br>
+																	}
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="code__img">
+                          <picture>
+                            <source media="(max-width: 600px)" srcset="./assets/img/Screenshot_1-600.webp"
+                              type="image/webp">
+                            <source media="(max-width: 1200px)" srcset="./assets/img/Screenshot_1-1200.webp"
+                              type="image/webp">
+                            <img alt="Image" src="./assets/img/Screenshot_1.webp">
+                          </picture>
+                        </div>
+                        <h2 class="h2 code-h2">цикл (цикли скорочують написання коду):</h2>
+                        <div class="code code-h2">
+                          <div class="m md">
+                            <p>
+                              <code>
+																	// додавання затримки анімації до елементів за допомогою циклу
+																	<br>
+																	<span class="b">&__items</span>
+																	{
+																	<br>
+																	<span class="b">&__item</span>
+																	{
+																	<br>
+																	<span class="f">transform:</span>
+																	<span class="h">translate(0px, 0px)</span>
+																	;
+																	<br>
+																	// цикл з 5-и повторень циклу
+																	<br>
+																	<span class="f">@for $i from 1 through</span>
+																	<span class="h">5</span>
+																	{
+																	<br>
+																	// $i назва змінної для циклу
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(#{$i})</span>
+																	{
+																	<br>
+																	// #{$i} вказуєм змінну замість номеру елементу
+																	<br>
+																	<span class="f">animation-delay:</span>
+																	<span class="h">#{($i - 1) * 0.2}s</span>
+																	;
+																	<br>
+																	// при кожному циклі буде множення номеру на 0.2
+																	<br>
+																	// (1*0.2=0.2) (2*0.2=0.4) ... Таким чином для першого елементу затримка буде 0.2s для другого 0.4s ...
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	<br>
+																	// додавання затримки анімації до елементів звичайним способом
+																	<br>
+																	<span class="b">&__items</span>
+																	{
+																	<br>
+																	<span class="b">&__item</span>
+																	{
+																	<br>
+																	<span class="f">transform:</span>
+																	<span class="h">translate(0px, 0px)</span>
+																	;
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(1)</span>
+																	{
+																	<br>
+																	<span class="f">transition-delay:</span>
+																	<span class="h">0.3s</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(2)</span>
+																	{
+																	<br>
+																	<span class="f">transition-delay:</span>
+																	<span class="h">0.6s</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(3)</span>
+																	{
+																	<br>
+																	<span class="f">transition-delay:</span>
+																	<span class="h">0.9s</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(4)</span>
+																	{
+																	<br>
+																	<span class="f">transition-delay:</span>
+																	<span class="h">1.2s</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	<span class="f">&:nth-child</span>
+																	<span class="h">(5)</span>
+																	{
+																	<br>
+																	<span class="f">transition-delay:</span>
+																	<span class="h">1.5s</span>
+																	;
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	}
+																	<br>
+																	// а тепер уявіть що таких елементів багато, більше 10-и і на скільки сильно @for спрощує написання коду
+																</code>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

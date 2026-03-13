@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/addphp.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <div class="tabs__body tabs__body-wp">
+                  <h1>Введение. База по языку программирования PHP.</h1>
+                  <p>
+                    В этом разделе мы рассмотрим основы PHP, включая рабочую среду, переменные, типы данных и управление
+                    потоком выполнения.
+                  </p>
+                  <p>Відео материал (11 часов - 20 минут)</p>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889438#overview"
+                    target="_blank">Рабочая
+                    среда, переменные и константы</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889440#overview"
+                    target="_blank">Типы
+                    Данных в PHP</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889444#overview"
+                    target="_blank">Условия, if else, switch case, match</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889446#overview"
+                    target="_blank">Арифметические операторы и Циклы for/while/do while/foreach</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889448#overview"
+                    target="_blank">Include
+                    / require / функции определяемые пользователем</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889450#overview"
+                    target="_blank">Предопределенные функции в PHP для работы со строками и датой и временем</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889452#overview"
+                    target="_blank">HTTP
+                    передача данных / $_POST / $_GET</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889460#overview"
+                    target="_blank">Передача файлов и функции для работы с файлами на PHP</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/33889462#overview"
+                    target="_blank">Работа
+                    с сессиями и куками на PHP. $_SESSION и $_COOKIE</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/34180798#overview"
+                    target="_blank">Работа
+                    с Базой Данных. phpMyAdmin и типы связей между таблицами.</a>
+                  <a href="https://www.udemy.com/course/all-wordpress/learn/lecture/34180814#overview"
+                    target="_blank">Функции
+                    PHP для работы с Базой Данных MySQL.</a>
+                </div>
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

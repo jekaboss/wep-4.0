@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WEP-3.0 Launcher</title>
+  <hta:application 
+    id="oHTA" 
+    applicationname="WEP3Launcher" 
+    border="thin"
+    borderstyle="normal"
+    caption="yes"
+    showintaskbar="yes"
+    singleinstance="yes"
+    sysmenu="yes"
+    navigable="no"
+    scroll="no"
+  />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      width: 400px;
+    }
+    h1 { margin-bottom: 20px; font-size: 2rem; }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      margin: 30px auto;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .status {
+      margin: 20px 0;
+      font-size: 1.1rem;
+    }
+    .btn {
+      padding: 15px 30px;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .success {
+      background: #44aa44;
+      color: white;
+    }
+    .error {
+      background: #ff4444;
+      color: white;
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 WEP-3.0</h1>
+    <div class="spinner" id="spinner"></div>
+    <div class="status" id="status">Перевірка сервера...</div>
+    <div id="buttons" class="hidden">
+      <button class="btn" id="startBtn" onclick="startServer()">🚀 Запустити сервер</button>
+      <button class="btn" onclick="openIndex()">📖 Відкрити WEP-3.0</button>
+    </div>
+    <div id="redirectMsg" class="hidden">
+      <p>Зачекайте... Відкриваємо WEP-3.0</p>
+    </div>
+  </div>
+
+  <script>
+    var API_URL = 'http://localhost:3000/api';
+    var shell = new ActiveXObject('WScript.Shell');
+    var scriptPath = window.location.pathname;
+    var scriptDir = scriptPath.substring(0, scriptPath.lastIndexOf('\\'));
+
+    // Check if server is running
+    function checkServer() {
+      var xhr = new ActiveXObject('Microsoft.XMLHTTP');
+      try {
+        xhr.open('GET', API_URL + '/cheatsheets', false);
+        xhr.send();
+        return (xhr.status === 200);
+      } catch (e) {
+        return false;
+      }
+    }
+
+    // Open index page
+    function openIndex() {
+      window.location.href = 'index.html';
+    }
+
+    // Start server
+    function startServer() {
+      var btn = document.getElementById('startBtn');
+      btn.disabled = true;
+      btn.textContent = 'Запуск...';
+
+      // Start server via batch file
+      shell.Run('cmd /c "cd /d ' + scriptDir + ' && start-server.bat"', 0, false);
+
+      // Wait and check if server started
+      setTimeout(function check() {
+        if (checkServer()) {
+          btn.className = 'btn success';
+          btn.textContent = '✅ Сервер запущено!';
+          document.getElementById('status').textContent = 'Сервер працює!';
+          document.getElementById('redirectMsg').classList.remove('hidden');
+          setTimeout(function() {
+            // Open index.html
+            shell.Run('"' + scriptDir + '\\index.html"', 1, false);
+          }, 1000);
+        } else {
+          btn.disabled = false;
+          btn.textContent = '🚀 Запустити сервер';
+          btn.className = 'btn error';
+          document.getElementById('status').textContent = 'Сервер не запустився. Спробуйте ще раз.';
+        }
+      }, 5000);
+    }
+
+    // Initialize
+    window.onload = function() {
+      if (checkServer()) {
+        document.getElementById('status').textContent = 'Сервер працює! Відкриваємо...';
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('redirectMsg').classList.remove('hidden');
+        setTimeout(openIndex, 1000);
+      } else {
+        document.getElementById('spinner').style.display = 'none';
+        document.getElementById('status').textContent = 'Сервер не запущено';
+        document.getElementById('buttons').classList.remove('hidden');
+      }
+    };
+  </script>
+</body>
+</html>

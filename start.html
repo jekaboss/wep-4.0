@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WEP-3.0 - Запуск...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      cursor: pointer;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+    }
+    .spinner {
+      width: 60px;
+      height: 60px;
+      margin: 20px auto;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .btn {
+      padding: 15px 30px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="spinner" id="spinner"></div>
+    <h2 id="status">Запуск сервера...</h2>
+    <p id="redirect">Зачекайте...</p>
+    <div id="buttons" style="margin-top: 20px;">
+      <a href="start-server.bat" class="btn" id="manualBtn">🚀 Запустити сервер</a>
+      <a href="index.html" class="btn" style="background: #2196F3;">📖 Відкрити WEP-Blocknot</a>
+    </div>
+  </div>
+
+  <script>
+    var target = window.location.search.substring(1) || 'index.html';
+    var API_URL = 'http://localhost:3000/api';
+    var checkCount = 0;
+    var maxChecks = 20;
+
+    function checkServer() {
+      return fetch(API_URL + '/cheatsheets', {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' },
+        mode: 'cors'
+      })
+      .then(response => response.ok)
+      .catch(() => false);
+    }
+
+    function redirectToTarget() {
+      document.getElementById('status').textContent = 'Сервер запущено!';
+      document.getElementById('redirect').textContent = 'Відкриваємо ' + target + '...';
+      document.getElementById('spinner').style.display = 'none';
+      document.getElementById('buttons').style.display = 'none';
+      
+      setTimeout(function() {
+        window.location.href = target;
+      }, 1500);
+    }
+
+    function waitForServer() {
+      checkCount++;
+      
+      checkServer().then(function(running) {
+        if (running) {
+          redirectToTarget();
+        } else if (checkCount < maxChecks) {
+          setTimeout(waitForServer, 1000);
+        } else {
+          document.getElementById('spinner').style.display = 'none';
+          document.getElementById('status').textContent = 'Сервер не запустився';
+          document.getElementById('redirect').textContent = 'Натисніть кнопку щоб запустити вручну';
+          document.getElementById('buttons').style.display = 'block';
+        }
+      });
+    }
+
+    // Auto-start: download and run batch file
+    function autoStart() {
+      // Create invisible link to trigger batch download
+      var link = document.createElement('a');
+      link.href = 'start-server.bat';
+      link.download = 'start-server.bat';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      document.getElementById('status').textContent = 'Запуск...';
+      document.getElementById('redirect').textContent = 'Відкрийте завантажений файл start-server.bat';
+      
+      // Start checking for server
+      setTimeout(waitForServer, 2000);
+    }
+
+    // Initialize
+    checkServer().then(function(running) {
+      if (running) {
+        // Server already running
+        redirectToTarget();
+      } else {
+        // Server not running - try to start
+        document.getElementById('buttons').style.display = 'block';
+        document.getElementById('manualBtn').style.display = 'none';
+        
+        // Auto-start after short delay
+        setTimeout(autoStart, 1500);
+      }
+    });
+  </script>
+</body>
+</html>

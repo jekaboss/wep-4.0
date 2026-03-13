@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="js/app.js"></script>
+  <script type="module" crossorigin="" src="js/tabs2.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/klachtml.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <section class="main__catalog catalog">
+                  <div class="catalog__container">
+                    <div class="catalog__body">
+                      <div class="catalog__header">
+                        <h1 class="catalog__title">( HTML )</h1>
+                      </div>
+                      <div class="inner-content">
+                        <h3>Служебные теги</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">
+                                <a href="#" title="класическа вспливающя поскаска" class="tooltip">!DOCTYPE</a>
+                              </td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Определяет тип документа.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">head</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер в начале страницы для служебных тегов и подгружаемых функций.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top">title</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Заголовок документа отображаемый во вкладке браузера.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">meta</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Метаданные страницы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">link</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подключает внешние сервисы и таблицы стилей.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">script</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подключает скрипты к станице.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">style</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">одключает глобальные стили к странице.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">base</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Базовый URL-адрес — домен.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">noscript</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Блок не поддерживающий скрипты.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">onkeypress</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Скрипт будет выполнен при нажатии клавиши и последующего разжатия</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">onkeyup</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Скрипт будет выполнен при разжатии клавиши</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Структурные блоки</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">body</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Тело html документа.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">main</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер для всего содержимого страницы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">nav</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер для навигационного меню.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">header</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Шапка сайта.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">article</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Блок основного контента, обычно статья.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">section</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Часть контента с заголовком.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">aside</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Часть контента, имеющая косвенное отношение к основному.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">footer</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подвал страницы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">div</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Применяется для создания блочных контейнеров.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">span</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Применяется для создания встроенных контейнеров.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">figure</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Независимый контейнер. Преимущественно для изображений.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">figcaption</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Заголовок для figure.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">details</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер с дополнительной информацией, который можно свернуть или
+                                развернуть.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">summary</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">
+                                Заголовок для details, по которому можно щёлкать, чтоб свернуть или развернуть
+                                блок.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Текст</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">h1 - h6</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Заголовки шесть уровней.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">p</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Абзац.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">br</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Перенос строки.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">wbr</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Возможное место разрыва строки.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">hr</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Прямая линия.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">blockquote</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Цитата.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">q</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Краткая цитата.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">cite</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Источник цитирования.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">code</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Фрагмент кода.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">pre</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Неформатированнй код.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">kbd</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Текст моноширным шрифтом.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">samp</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Результат выполнения скрипта.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">var</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет переменные из программ.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">del</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Зачёркнутый текст помечается как удалённый.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">s</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Зачёркнутый текст.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">ins</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подчёркивает изменения в тексте.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">u</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подчёркнутый текст.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">dfn</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет термин курсивом.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">em</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет курсивом важные фрагменты текста.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">i</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет текст курсивом.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">strong</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет важный текст полужирным.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">b</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет текст полужирным.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">mark</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет фрагмент текста жёлтым фоном.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">small</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Уменьшает размер шрифта.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">sub</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Подстрочное написание H2O.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">sup</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Надстрочное написание R2.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">time</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Дата, время выпуска статьи.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">abbr</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Аббревиатура.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">address</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Адрес автора статьи.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">bdi</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">
+                                Изолирует текст читаемый справа на лево. Применяется в текстах написанных на
+                                двух
+                                языках.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top">bdo</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Задаёт направление написания текста.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">ruby</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер для Восточно-Азиатских символов.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">rp</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">
+                                Используется для вывода текста в браузерах, которые не поддерживают тег . В
+                                остальных
+                                браузерах текст, заключенный в контейнер.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top">rt</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Расшифровка символов.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Таблицы</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">table</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Таблица HTML.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">tr</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Строка таблицы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">th</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Ячейки заголовков столбцов таблицы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">td</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Ячейки таблицы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">thead</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Группа верхних строк таблицы. Применяется для общего оформления.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">tfoot</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Группа нижних строк таблицы. Применяется для общего оформления.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">tbody</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Группа строк в середине таблицы. Применяется для общего оформления.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">col</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Выделяет столбец таблицы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">colgroup</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Группирует несколько столбцов таблицы для общего оформления.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">caption</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Описание таблицы.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Списки</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">ol</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Упорядоченный нумерованный список.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">ul</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Маркированный список.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">li</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Элемент списка.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">dl</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Список с описаниями.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">dt</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Строка списка с описаниями.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">dd</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Описание строки, списка с описаниями.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Изображения</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">img</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Изображение html.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">map</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Активные области на карте.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">area</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Активная область с гиперссылкой на карте.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">canvas</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">
+                                Холст контейнер для динамического отображения изображений созданных с помощью
+                                JavaScript.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Формы HTML</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">form</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Формы HTML.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">input</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Многофункциональные поля формы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">textarea</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Многострочное поле формы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">label</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Обычно текст формы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">datalist</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Создаёт список вариантов, из которых можно сделать выбор.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">option</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Опция в раскрывающемся списке.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">optgroup</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер с заголовком для группы option.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">select</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер для создания раскрывающегося списка.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">fieldset</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Группирует связанные элементы формы.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">legend</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Заголовок элементов формы, связанных fieldset.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">button</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Интерактивная кнопка.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">keygen</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Генератор ключей.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">progress</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Отображает процесс выполнения в числовых значениях.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">meter</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">
+                                Используется для отображения числовых значений таких показателей как количество
+                                посетителей, величина давления и т.п.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top">output</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Поле для вывода результатов вычислений.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Встраиваемые элементы</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">audio</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Аудио файл.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">video</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Видео файл.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">source</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">указывает местоположение и тип альтернативных файлов для video и audio.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td valign="top">track</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Субтитры.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">embed</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Встроенный внешний элемент.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">object</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Контейнер для встраиваемого внешнего элемента.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">param</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Параметры встраиваемого внешнего элемента.</td>
+                            </tr>
+                            <tr>
+                              <td valign="top">iframe</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Встроенный фрейм.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <h3>Ссылка</h3>
+                        <table border="1" cellpadding="0" cellspacing="0" width="100%" class="tagsdesc">
+                          <tbody>
+                            <tr>
+                              <th valign="top" width="15%">Атрибут</th>
+                              <!-- <th valign="top" width="20%">Значение</th> -->
+                              <th valign="top" width="65%">Описание</th>
+                            </tr>
+                            <tr>
+                              <td valign="top">a</td>
+                              <!-- <td valign="top"><em>скрипт</em></td> -->
+                              <td valign="top">Гипер ссылка.</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

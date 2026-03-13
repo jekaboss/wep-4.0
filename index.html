@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-3.0 - Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <script type="module" crossorigin="" src="./js/tabs2.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="./css/serveri.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home" id="#">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <!-- ЗАМЕТКИ -->
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://jekaboss.github.io/Price/" target="_blank">price</a>
+                </div>
+								<br>
+								<hr style="border: 2px solid rgb(203, 234, 32);">
+								<div data-fls-well="" class="tabs__body tabs__body-wp well">
+									<button onclick="startServer()" style="background:#4CAF50;color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-size:14px;width:100%;">🚀 Запустити сервер</button>
+								</div>
+								<hr style="border: 2px solid rgb(203, 234, 32);">
+								<div data-fls-well="" class="tabs__body tabs__body-wp well">
+									<a href="https://www.youtube.com/watch?v=1hNVvKaXuec" target="_blank">Відео про Jenkins</a>
+								</div>
+								<div data-fls-well="" class="tabs__body tabs__body-wp well">
+									<a href="https://www.youtube.com/@ITVDN/playlists" target="_blank">Відеоуроки на youtube</a>
+								</div>
+								<br>
+								<hr style="border: 2px solid rgb(203, 234, 32);">
+								<div data-fls-well="" class="tabs__body tabs__body-wp well">
+									<a href="shpargalka.html" target="_blank">шпаргалка по сайтам.</a>
+								</div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2">
+                <div data-fls-spollers="" class="spollers">
+                  <!-- ============================================ -->
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                  <!-- ============================================ -->
+                </div>
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+                <div class="main__blok2-blok1">
+                  <!-- <a href="#">
+                    <picture>
+                      <img class="main__blok2-blok1__logo" width="100" alt="reakt" src="./assets/img/01.webp">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">РІЗНЕ</h2>
+                  </a> -->
+                  <!-- <a href="#">
+                    <picture>
+                      <source media="(max-width: 600px)" srcset="./assets/img/1-600.webp" type="image/webp">
+                      <img class="main__blok2-blok1__logo" width="100" alt="html css js" src="./assets/img/1.webp">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">HTML CSS</h2>
+                  </a> -->
+                  <!-- <a href="#">
+                    <picture>
+                      <source media="(max-width: 600px)" srcset="./assets/img/js-600.webp" type="image/webp">
+                      <img class="main__blok2-blok1__logo" width="100" alt="javascript" src="./assets/img/js.webp">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">JS</h2>
+                  </a> -->
+                  <a href="https://vscode.dev/?vscode-lang=ru-ru" target="_blank">
+                    <picture>
+                      <img class="main__blok2-blok1__logo" width="100" alt="vs code" src="./assets/img/6.webp">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">vs code</h2>
+                  </a>
+                  <a href="https://stackblitz.com/" target="_blank">
+                    <picture>
+                      <img class="main__blok2-blok1__logo" width="100" alt="stackblitz" src="./assets/img/7.webp">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">stackblitz</h2>
+                  </a>
+                  <a href="https://github.com/jekaboss" target="_blank">
+                    <picture>
+                      <img class="main__blok2-blok1__logo" width="100" alt="github" src="./assets/img/8.png">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">jekaboss</h2>
+                  </a>
+                  <a href="https://github.com/asus13note" target="_blank">
+                    <picture>
+                      <img class="main__blok2-blok1__logo" width="100" alt="github" src="./assets/img/9.jpg">
+                    </picture>
+                    <h2 class="main__blok2-blok1__title">asus13note</h2>
+                  </a>
+									<a href="https://gitlab.com/" target="_blank">
+										<picture>
+											<img class="main__blok2-blok1__logo" width="100" alt="github" src="./assets/img/10.jpg">
+										</picture>
+										<h2 class="main__blok2-blok1__title">asus13note</h2>
+									</a>
+									<a href="https://coddy.tech/journeys" target="_blank">
+										<picture>
+											<img class="main__blok2-blok1__logo" width="80" alt="github" src="./assets/img/coddy.svg">
+										</picture>
+										<h2 class="main__blok2-blok1__title">coddy</h2>
+									</a>
+                </div>
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+                <div class="main__blok2-blok2">
+                  <a class="main__blok2-blok2--a"
+                    href="https://fish-flute-4d3.notion.site/ed45efc8d6e94249865076650fcddd25?v=b1e6974b796247f0a04a0ee3a3e396b0"
+                    target="_blank">Нотатки,</a>
+                  <a class="main__blok2-blok2--a" href="https://fls.guru/" target="_blank">шпаргалка ( Фрилансер по
+                    життю
+                    ),</a>
+                  <a class="main__blok2-blok2--a" href="https://devdocs.io/" target="_blank">Корисна шпаргалка</a>
+                  <a class="main__blok2-blok2--a" href="https://yhub.net/login" target="_blank">Безплатний розмишеня
+                    свого
+                    сайта,</a>
+                  <a class="main__blok2-blok2--a" href="https://chatgpt.com/" target="_blank">чат GPT,</a>
+                  <a class="main__blok2-blok2--a" href="https://chat.deepseek.com/sign_in" target="_blank">чат
+                    Deepseek,</a>
+                  <a class="main__blok2-blok2--a" href="https://grok.com/" target="_blank">чат Grik,</a>
+                  <a class="main__blok2-blok2--a" href="https://chat.qwen.ai/" target="_blank">чат Qwen,</a>
+                  <a class="main__blok2-blok2--a" href="https://www.kimi.com/" target="_blank">чат kimi,</a>
+                  <a class="main__blok2-blok2--a" href="https://you.com/" target="_blank">чат you,</a>
+                  <a class="main__blok2-blok2--a"
+                    href="https://account.leadteh.ru/login?response_type=code&client_id=f62a5a9a-4189-4ee1-b778-001d3cba2a78&redirect_uri=https%3A%2F%2Fapp.leadteh.ru%2Fauthorize&redirect_after_login=L3Byb2plY3RzLzZlMDE2ZGI2LWEyZDQtNDVkZS05YTlkLTVlOWM1Y2I0NjhlOA%3D%3D"
+                    target="_blank">создания чат бота,</a>
+                  <a class="main__blok2-blok2--a" href="https://ru.pinterest.com/" target="_blank">pinterest,</a>
+                  <a class="main__blok2-blok2--a" href="https://www.udemy.com/" target="_blank">udemy.</a>
+
+                </div>
+                <!-- ================================================================================== -->
+                <hr style="border: 2px solid rgb(203, 234, 32);">
+                <div class="main__blok2-blok3">
+                  <div data-fls-tabs="" class="tabs">
+                    <nav data-fls-tabs-titles="" class="tabs__navigation">
+                      <button type="button" class="tabs__title --tab-active">проверка сайтов</button>
+                      <button type="button" class="tabs__title">слайдери</button>
+                      <button type="button" class="tabs__title">библиотека</button>
+                      <button type="button" class="tabs__title">робота з макетами</button>
+                    </nav>
+                    <div data-fls-tabs-body="" class="tabs__content">
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://pagespeed.web.dev/" target="_blank">PageSpeed Insights</a>
+                        <a href="https://validator.w3.org/" target="_blank">виявляє html код на помилки</a>
+                        <a href="https://caninclude.glitch.me/" target="_blank">caninclude</a>
+                        <a href="https://jigsaw.w3.org/css-validator/" target="_blank">CSS Validation Service</a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://swiperjs.com/" target="_blank">swiperjs</a>
+                        <a href="https://kenwheeler.github.io/slick/" target="_blank">kenwheeler</a>
+                        <a href="https://splidejs.com/" target="_blank">splidejs</a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://developers.google.com/speed/libraries?hl=ru" target="_blank">Библиотеки
+                          Google</a>
+                        <a href="https://releases.jquery.com/" target="_blank">jquery.com</a>
+                        <a href="https://cdnjs.com/libraries/normalize" target="_blank">cdnjs.com</a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://www.figma.com/files/team/972367394726786034/recents-and-sharing?fuid=972367388857495518"
+                          target="_blank">figma</a>
+                        <a href="https://pixso.net/user/login/?response_type=none&redirect_uri=https%3A%2F%2Fpixso.net%2Fapp%2Fdrafts&from=1&product=pixso&ux_mode=redirect"
+                          target="_blank">pixso</a>
+                        <!-- <a href="" target="_blank"></a> -->
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ========================================================= -->
+                  <hr style="border: 1px solid rgb(234, 32, 32);">
+                  <div data-fls-tabs="" class="tabs">
+                    <nav data-fls-tabs-titles="" class="tabs__navigation">
+                      <button type="button" class="tabs__title --tab-active">генератори</button>
+                      <button type="button" class="tabs__title">корисні посилання</button>
+                      <!-- <button type="button" class="tabs__title"></button> -->
+                      <!-- <button type="button" class="tabs__title">корисні посилання 2</button> -->
+                    </nav>
+                    <div data-fls-tabs-body="" class="tabs__content">
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://cssgrid-generator.netlify.app/" target="_blank">CSS Grid Generator</a>
+                        <a href="https://transfonter.org/" target="_blank">генератор шрифтив</a>
+                        <a href="https://www.plantcss.com/blog/how-to-make-rounded-corners-when-using-css-clip-path"
+                          target="_blank">plantcss</a>
+                        <a href="https://www.imgonline.com.ua/favicon-ico-for-website.php"
+                          target="_blank">IMGonline.com.ua</a>
+                        <a href="https://www.svgrepo.com/" target="_blank">безкоштовних іконок</a>
+                        <a href="https://css.gg/icon/add" target="_blank">сайт де показані різні іконки для стилізації
+                          сайту</a>
+                        <a href="https://yoksel.github.io/html-tree/en/" target="_blank">генератор html-дерева</a>
+                        <a href="https://snippet-generator.app/?description=&tabtrigger=&snippet=&mode=vscode"
+                          target="_blank">згенерувати
+                          сніпети</a>
+                        <a href="https://chir.ag/projects/name-that-color/#6195ED" target="_blank">який допомагає з
+                          назвами кольорів</a>
+                        <a href="https://coolors.co/" target="_blank">генеруємо кольорові</a>
+                        <a href="https://getwaves.io/" target="_blank">робимо хвильки</a>
+                        <a href="https://xn--80adth0aefm3i.xn--j1amh/HTML" target="_blank">довідка по тегах</a>
+                        <a href="https://keyframes.app/animate" target="_blank">можна зробити комплексні анімації з
+                          окремими кроками</a>
+                        <a href="https://animista.net/" target="_blank">заготовлені анімації</a>
+                        <a href="https://cssflex-generator.netlify.app/" target="_blank">генеримо флекси</a>
+                        <a href="https://cssgradient.io/" target="_blank">можна зробити градієнти</a>
+                        <a href="https://www.css?v=1751815721684portal.com/css-animated-text-generator/"
+                          target="_blank">ціла купа різних генераторів</a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://html.spec.whatwg.org/" target="_blank">специфікація HTML5</a>
+                        <a href="https://code.visualstudio.com/" target="_blank">Посилання на VS Code</a>
+                        <a href="https://htmlreference.io/" target="_blank">HTML</a>
+                        <a href="https://cssreference.io/" target="_blank">CSS</a>
+                        <a href="https://www.w3schools.com/" target="_blank">загальноосвітній</a>
+                        <a href="https://caniuse.com/" target="_blank">зрозуміти як працює властивість</a>
+                        <a href="https://codepen.io/" target="_blank">корисний сайт для практики</a>
+                        <a href="https://learn.microsoft.com/en-us/sysinternals/downloads/zoomit?WT.mc_id=-blog-scottha"
+                          target="_blank">Програма для малювання</a>
+                        <a href="https://www.freecodecamp.org/learn/" target="_blank">Безкоштовна платформа для вивчення
+                          чималих тем</a>
+                        <a href="https://uiverse.io/" target="_blank">разні кнопки кода.</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ========================================================= -->
+                  <hr style="border: 1px solid rgb(234, 32, 32);">
+                  <div data-fls-tabs="" class="tabs">
+                    <nav data-fls-tabs-titles="" class="tabs__navigation">
+                      <button type="button" class="tabs__title --tab-active">фрилан биржи</button>
+                      <button type="button" class="tabs__title">хостинг</button>
+                    </nav>
+                    <div data-fls-tabs-body="" class="tabs__content">
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://prolinker.com/" target="_blank">prolinker.com</a>
+                        <a href="https://freelancehunt.com/ua/profile/login?to=%2Fmy" target="_blank">freelancehunt</a>
+                        <a href="https://www.weblancer.net/" target="_blank">weblancer</a>
+                        <a href="https://freelance.ua/ru/" target="_blank">freelance.ua</a>
+                        <a href="https://kabanchik.ua/ua/dnipro" target="_blank">kabanchik</a>
+                        <a href="https://www.upwork.com/" target="_blank">upwork</a>
+                        <a href="https://www.fiverr.com/" target="_blank">fiverr</a>
+                        <a href="https://justjoin.it/" target="_blank">зарубежни вакансиї</a>
+                        <a href="https://recruitika.com/" target="_blank">вакансиї</a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://www.zzz.com.ua/panel/uk/main" target="_blank">www.zzz.com.ua</a>
+                        <a href="https://www.ukraine.com.ua/" target="_blank">www.ukraine.com.ua</a>
+                        <a href="https://link-host.net/hosting/" target="_blank">link-host.net</a>
+                        <a href="https://hostiq.ua/ukr/" target="_blank">hostiq.ua</a>
+                        <a href="https://thehost.ua/" target="_blank">thehost.ua</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- ========================================================= -->
+                  <hr style="border: 1px solid rgb(234, 32, 32);">
+                  <div data-fls-tabs="" class="tabs">
+                    <nav data-fls-tabs-titles="" class="tabs__navigation">
+                      <button type="button" class="tabs__title --tab-active">відео</button>
+                      <button type="button" class="tabs__title">ігри</button>
+                    </nav>
+                    <div data-fls-tabs-body="" class="tabs__content">
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://www.youtube.com/watch?v=Ci117QSuZH4&ab_channel=Skilliton" target="_blank">Эти
+                          игры помогают
+                          изучать программирования</a>
+                        <a href="https://www.youtube.com/watch?v=NBJgnlxiF7E" target="_blank">Лучшие игры для ОБУЧЕНИЯ
+                          ПРОГРАММИРОВАНИЮ</a>
+                        <a href="https://www.youtube.com/watch?v=5apqhV0EuDM&ab_channel=Flanders" target="_blank">
+                          Как научиться
+                          программировать с нуля играя в игры. Java, JavaScript, C++, C#, Python, PHP, Ruby
+                        </a>
+                      </div>
+                      <div class="tabs__body tabs__body-wp">
+                        <a href="https://codecombat.com/" target="_blank">codecombat</a>
+                        <a href="https://www.codingame.com/start/" target="_blank">codingame</a>
+                        <a href="http://www.flexboxdefense.com/" target="_blank">flexbox defense</a>
+                        <a href="https://flukeout.github.io/" target="_blank">css diner</a>
+                        <a href="https://bitburner-official.github.io/" target="_blank">Bitburner (js)</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="main__blok2-blok4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-3.0.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script>
+    // Запуск сервера - універсальний метод
+    function startServer() {
+      // Перевірка чи працює в Electron
+      if (window.electronAPI) {
+        // Electron додаток
+        window.electronAPI.startServer().then(() => {
+          console.log('Сервер запущено через Electron!');
+        });
+      } else {
+        // Звичайний браузер - відкриває start.html
+        window.location.href = 'start.html?target=index.html';
+      }
+    }
+  </script>
+</body>
+
+</html>

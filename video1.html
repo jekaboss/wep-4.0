@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <style data-fls-preloader="true" rel="preload">
+    body>*:not(.fls-preloader) {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    [data-fls-preloader-loaded] body>*:not(.fls-preloader) {
+      transition: opacity 0.5s ease 0s;
+      opacity: 1;
+      visibility: visible;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./assets/img/favicon.ico">
+  <title>WEP-Блокнот</title>
+  <script type="module" crossorigin="" src="./js/app.js"></script>
+  <link rel="stylesheet" crossorigin="" href="./css/app.css">
+  <link rel="stylesheet" crossorigin="" href="./css/video1.css">
+  <link rel="stylesheet" crossorigin="" href="./css/tabs.css">
+  <link rel="stylesheet" crossorigin="" href="./css/wp.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header data-fls-header="" class="header">
+      <div class="header__container">
+        <div class="header__body">
+          <picture>
+            <a href="index.html">
+              <img class="header__logo" alt="logo" src="./assets/img/logo1.webp">
+            </a>
+          </picture>
+          <div class="header__menu menu">
+            <div class="search-wrapper">
+              <button class="search-icon" id="toggleSearch" aria-label="Пошук">
+                <!-- SVG ЛУПА -->
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" class="icon">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </button>
+              <div class="search-container" id="searchContainer">
+                <input type="text" id="searchInput" placeholder="Введіть запит...">
+                <div id="searchResults"></div>
+              </div>
+            </div>
+            <button type="button" data-fls-menu="" class="menu__icon icon-menu">
+              <span></span>
+            </button>
+            <nav class="menu__body">
+              <ul class="menu__list">
+                <li class="menu__item">
+                  <a href="html.html" class="menu__link">html</a>
+                </li>
+                <li class="menu__item">
+                  <a href="css.html" class="menu__link">css</a>
+                </li>
+                <li class="menu__item">
+                  <a href="scss.html" class="menu__link">scss</a>
+                </li>
+                <li class="menu__item">
+                  <a href="js.html" class="menu__link">JavaScript</a>
+                </li>
+                <li class="menu__item">
+                  <a href="addphp.html" class="menu__link">php</a>
+                </li>
+                <li class="menu__item">
+                  <a href="wp.html" class="menu__link">WordpRess</a>
+                </li>
+                <li class="menu__item">
+                  <a href="git.html" class="menu__link">GIT</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="inner">
+      <main class="page page--home">
+        <div class="page__container">
+          <div class="inner__main main">
+            <div class="main__blok">
+              <div class="main__blok1">
+                <div data-fls-datal="" class="clock-container">
+                  <div id="time"></div>
+                  <div id="date"></div>
+                </div>
+                <div data-fls-tap="" class="calendar">
+                  <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                  </div>
+                  <div class="calendar-grid" id="calendar-grid"></div>
+                </div>
+                <div data-fls-well="" class="tabs__body tabs__body-wp well">
+                  <a href="https://asus13note.github.io/Portfolio-main/" target="_blank">Порфоліо</a>
+                </div>
+                <!-- ======================================================================================= -->
+                <div data-fls-spollers="" class="spollers">
+                  <details class="spollers__item">
+                    <summary class="spollers__title">СПОЛЛЕРИ</summary>
+                    <div class="spollers__body">
+                      <ul class="spollers__list">
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video.html">мастер-клас</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="vite.html">Сборщик проектов Vite</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="video1.html">Видео уроки</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="ip.html">Полезни Статті зі світу IT</a>
+                        </li>
+                        <li class="tabs__body tabs__body-wp">
+                          <a href="serveri.html">Про Сервери</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </details>
+                </div>
+              </div>
+              <!-- =================================================================================================== -->
+              <div class="main__blok2 videomodal">
+                <div class="videomodal">
+                  <div class="videomodal__vid">
+                    <a href="https://www.youtube.com/embed/nx2TWEKgnpQ?si=oLQcKDBDW_9DPWmU" target="_blank">Урок 1
+                      Знайомство</a>
+                    <hr>
+                    <a href="https://www.youtube.com/embed/0pVoX8O5kOU?si=6FtLgk7lmn5T1xHd" target="_blank">Урок 2
+                      Файлова структура проекту
+                      знайомство з html</a>
+                    <a href="https://www.youtube.com/embed/keWvh8rHHxE?si=dDMmhdfrgJSaq3qd" target="_blank">Урок 3
+                      Повторення
+                      HTML,HTML-Вкладенисть, Основи CSS</a>
+                    <a href="https://www.youtube.com/embed/qC8u7m4zyoo?si=Q0KrHfUnBWp_d1JC" target="_blank">Урок 4 css -
+                      синтаксис та
+                      селектори</a>
+                    <a href="https://www.youtube.com/embed/8K_hbOQDxyE?si=fRwC47AiwkeOtfE8" target="_blank">
+                      Урок 5 основи роботи з figma,
+                      пидключеня шрифтив, css властивости шрифтив та тексту
+                    </a>
+                    <a href="https://www.youtube.com/embed/HmSBRSqimiM?si=lvqoF0EqmwZKvb4i" target="_blank">Урок 6 css -
+                      властивости
+                      блокив</a>
+                    <a href="https://www.youtube.com/embed/iQdtilEeMwo?si=WSowJ37L65Gs3Ys8" target="_blank">Урок 7 css -
+                      властивости оформленя
+                      блокив</a>
+                    <a href="https://www.youtube.com/embed/79h_uyOLo_4?si=pp1Aarj6Lddhz62o" target="_blank">Урок 8 css -
+                      властивости
+                      background</a>
+                    <a href="https://www.youtube.com/embed/wT3WnsITwG4?si=jJSByvrjTNup8Ha5" target="_blank">Урок 9 (
+                      Псевдокласи та
+                      псевдоелементи )</a>
+                    <a href="https://www.youtube.com/embed/10ZDc6tLyII?si=QCiwgb8mVtNZjgVk" target="_blank">Урок 10 (
+                      web-графика
+                      )</a>
+                    <a href="https://www.youtube.com/embed/JcAmb9DDop8?si=i9omcfIglakQKjfh" target="_blank">Урок 11 (
+                      Методология БЄМ
+                      )</a>
+                    <a href="https://www.youtube.com/embed/I2H1Hk5rHKo?si=Y0zBqD1Zu-RCfOJd" target="_blank">Урок 12 (
+                      Позеционування
+                      )</a>
+                    <a href="https://www.youtube.com/embed/2tWt5xckJBM?si=c4LclM2XCJ9MWWId" target="_blank">Урок 13 (
+                      css транформации
+                      )</a>
+                    <a href="https://www.youtube.com/embed/wfWUSaphA6c?si=uqOHLh2ZO19oOwju" target="_blank">Урок 14 (
+                      css анимации
+                      )</a>
+                    <a href="https://www.youtube.com/embed/lzVqtLkmpO0?si=YP0fVH3fqjl3C9F7" target="_blank">Урок 15 (
+                      Модулб FLEX
+                      )</a>
+                    <a href="https://www.youtube.com/embed/SbNBSQBj4DQ?si=8pyQE6uGq9IzleqK" target="_blank">Урок 16 (
+                      HTML - форми
+                      )</a>
+                    <a href="https://www.youtube.com/embed/0FvcP5Z8D08?si=YYrCzd1UwFx9mH1Z" target="_blank">Урок 17 (
+                      Адаптивна верстка
+                      )</a>
+                    <a href="https://www.youtube.com/embed/VJZWLEBTvjI?si=N2zD6IB4YrjTAh82" target="_blank">Урок 18 (
+                      Практика закриплення
+                      материалу )</a>
+                    <a href="https://www.youtube.com/embed/L2hzKBhmlq0?si=QC3o4_BYd2nM3UCB" target="_blank">Урок 19 (
+                      Модуль - GRID
+                      )</a>
+                    <a href="https://www.youtube.com/embed/GBaH5rIltWY?si=rznzitQjVsfyIaFo" target="_blank">Урок 20 (
+                      Препроцесор SASS/SCSS
+                      )</a>
+                    <a href="https://www.youtube.com/embed/oOCokURDhdw?si=EAsLipyK_5QlLgF7" target="_blank">Урок 21 (
+                      Суперсила SASS/SCSS,
+                      Семантика та доступнисть )</a>
+                    <a href="https://www.youtube.com/embed/A7EWddQ9BBI?si=vNUi1KTG987Sw1Q1" target="_blank">Урок 22 (
+                      Видносни одиници та инши
+                      корисни CSS можливости )</a>
+                    <hr style="border: 2px solid rgb(234, 32, 32);">
+                    <a href="https://www.youtube.com/embed/oKiIu0V01zk?si=uLGpl2sXtLVYVIuB" target="_blank">Урок 23 (
+                      JavaScript. Частина 1
+                      )</a>
+                    <a href="https://www.youtube.com/embed/GTHRcZ2FDiE?si=pnqkqH7FHORRZkzq" target="_blank">Урок 24 (
+                      JavaScript. Частина 2
+                      )</a>
+                    <a href="https://www.youtube.com/embed/vh0avFlIkEo?si=_jG0O4x7DAASLD7P" target="_blank">Урок 25 (
+                      JavaScript. Частина 3
+                      )</a>
+                    <a href="https://www.youtube.com/embed/KEPpwEldyzQ?si=bnyrJrlCbwzD5cP7" target="_blank">Урок 26 (
+                      JavaScript. Частина 4
+                      )</a>
+                    <hr style="border: 2px solid rgb(234, 32, 32);">
+                    <a href="https://www.youtube.com/embed/HzzImb20RUA?si=6ri4e7rTq9b-Obbf" target="_blank">Урок 27 (
+                      Практика. Частина 1
+                      )</a>
+                    <a href="https://www.youtube.com/embed/x7pXa8Q2twI?si=HnWwhwZkQzgYpdKN">Урок 28 ( Практика. Частина
+                      2
+                      )</a>
+                    <a href="https://www.youtube.com/embed/W5-H_P_J9Yw?si=cMW12rWRNIq9ytBl" target="_blank">Урок 29 (
+                      Практика. Частина 3
+                      )</a>
+                    <a href="https://www.youtube.com/embed/nxC7SDPSxVM?si=rNdDA0ZzHz6qqBX9" target="_blank">Урок 30 (
+                      Практика. Частина 4
+                      )</a>
+                    <a href="https://www.youtube.com/embed/YJlYDYhl3aw?si=DDzuixk_Wh5s5gi5" target="_blank">Урок 31 (
+                      Практика. Частина 5
+                      )</a>
+                    <a href="https://www.youtube.com/embed/vn4l9-7p0Tg?si=m35BznUQxo41TxX6" target="_blank">Урок 32 (
+                      Практика. Частина 6
+                      )</a>
+                    <a href="https://www.youtube.com/embed/dOYhLDjaQGs?si=9xlL_CTV3Sbbgbcw" target="_blank">Урок 33 (
+                      Практика. Частина 7
+                      )</a>
+                    <a href="https://www.youtube.com/embed/SEa30flsEI0?si=x-7gj0ZnAq7ZyafI" target="_blank">Урок 34 (
+                      Практика. Частина 8
+                      )</a>
+                    <a href="https://www.youtube.com/embed/uVJ8AuO18rQ?si=tTXDrzAFC795-8W9" target="_blank">Урок 35 (
+                      Практика. Частина 9
+                      )</a>
+                    <a href="https://www.youtube.com/embed/Pbkt-awZivg?si=efsyRzn2NwaaLH7U" target="_blank">Урок 36 (
+                      Практика. Частина 10
+                      )</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer data-fls-footer="" class="footer">
+      <div class="footer__container">
+        <div class="footer__inner">
+          <div class="footer__text">
+            <p>© 2025 WEP-Blocknote.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

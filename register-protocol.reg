@@ -1,0 +1,12 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\wep]
+@="URL:WEP Protocol"
+"URL Protocol"=""
+
+[HKEY_CLASSES_ROOT\wep\shell]
+
+[HKEY_CLASSES_ROOT\wep\shell\open]
+
+[HKEY_CLASSES_ROOT\wep\shell\open\command]
+@="cmd /c \"cd /d \\\"%~dp0\\\" && start-server.bat\" && start \"\" \"%~dp0index.html\""
