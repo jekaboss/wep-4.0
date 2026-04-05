@@ -1,5 +1,5 @@
 // Server URL
-const API_URL = 'http://localhost:3000/api';
+const API_URL = (window.location.protocol.startsWith('http') ? window.location.origin : 'http://localhost:3000') + '/api';
 
 var cheatsheets = [];
 var currentFilter = 'all';
@@ -21,7 +21,54 @@ var importBtn = document.getElementById('importBtn');
 var importFile = document.getElementById('importFile');
 var serverStatus = document.getElementById('serverStatus');
 var searchInput = document.getElementById('searchInput');
+var searchToggle = document.getElementById('searchToggle');
+var searchWrapper = document.getElementById('searchWrapper');
 var searchTimeout = null;
+
+if (searchInput) {
+  searchInput.oninput = function() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(renderCheatsheets, 300);
+  };
+}
+
+if (searchToggle && searchWrapper && searchInput) {
+  searchToggle.addEventListener('click', function() {
+    if (!searchWrapper.classList.contains('active')) {
+      searchWrapper.classList.add('active');
+      searchInput.focus();
+    } else if (!searchInput.value.trim()) {
+      searchWrapper.classList.remove('active');
+    }
+  });
+
+  searchInput.addEventListener('blur', function() {
+    if (!searchInput.value.trim()) {
+      searchWrapper.classList.remove('active');
+    }
+  });
+}
+
+if (openModalBtn) {
+  openModalBtn.addEventListener('click', function() {
+    modal.classList.add('active');
+    modalTitle.textContent = 'Додати шпаргалку';
+    document.getElementById('editId').value = '';
+    document.getElementById('title').value = '';
+    document.getElementById('description').value = '';
+    htmlToggle.checked = false;
+    cssToggle.checked = false;
+    jsToggle.checked = false;
+    htmlCode.value = '';
+    cssCode.value = '';
+    jsCode.value = '';
+    htmlCode.disabled = true;
+    cssCode.disabled = true;
+    jsCode.disabled = true;
+    previewContainer.classList.remove('active');
+    previewBtn.textContent = '👁 Перегляд';
+  });
+}
 
 // Search functionality
 searchInput.oninput = function() {
@@ -105,19 +152,25 @@ function deleteFromServer(id) {
 loadFromServer();
 
 // Toggle code areas
-htmlToggle.onchange = function() {
-  htmlCode.disabled = !htmlToggle.checked;
-  if (htmlToggle.checked) htmlCode.focus();
-};
+if (htmlToggle && htmlCode) {
+  htmlToggle.onchange = function() {
+    htmlCode.disabled = !htmlToggle.checked;
+    if (htmlToggle.checked) htmlCode.focus();
+  };
+}
 
-cssToggle.onchange = function() {
-  cssCode.disabled = !cssToggle.checked;
-  if (cssToggle.checked) cssCode.focus();
-};
+if (cssToggle && cssCode) {
+  cssToggle.onchange = function() {
+    cssCode.disabled = !cssToggle.checked;
+    if (cssToggle.checked) cssCode.focus();
+  };
+}
 
-jsToggle.onchange = function() {
-  jsCode.disabled = !jsToggle.checked;
-  if (jsToggle.checked) jsCode.focus();
+if (jsToggle && jsCode) {
+  jsToggle.onchange = function() {
+    jsCode.disabled = !jsToggle.checked;
+    if (jsToggle.checked) jsCode.focus();
+  };
 };
 
 // Copy code function
@@ -133,27 +186,30 @@ window.copyCode = function(id) {
 };
 
 // Export cheatsheets to JSON file
-exportBtn.onclick = function() {
-  if (cheatsheets.length === 0) {
-    alert('Немає шпаргалок для експорту!');
-    return;
-  }
-  var dataStr = JSON.stringify(cheatsheets, null, 2);
-  var blob = new Blob([dataStr], { type: 'application/json' });
-  var url = URL.createObjectURL(blob);
-  var a = document.createElement('a');
-  a.href = url;
-  a.download = 'cheatsheets-' + new Date().toISOString().slice(0,10) + '.json';
-  a.click();
-  URL.revokeObjectURL(url);
-};
+if (exportBtn) {
+  exportBtn.onclick = function() {
+    if (cheatsheets.length === 0) {
+      alert('Немає шпаргалок для експорту!');
+      return;
+    }
+    var dataStr = JSON.stringify(cheatsheets, null, 2);
+    var blob = new Blob([dataStr], { type: 'application/json' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'cheatsheets-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+}
 
 // Import cheatsheets from JSON file
-importBtn.onclick = function() {
-  importFile.click();
-};
+if (importBtn && importFile) {
+  importBtn.onclick = function() {
+    importFile.click();
+  };
 
-importFile.onchange = function() {
+  importFile.onchange = function() {
   var file = importFile.files[0];
   if (!file) return;
   
@@ -183,46 +239,37 @@ importFile.onchange = function() {
   };
   reader.readAsText(file);
   importFile.value = '';
-};
+  };
+}
 
-openModalBtn.onclick = function() {
-  modal.classList.add('active');
-  modalTitle.textContent = 'Додати шпаргалку';
-  document.getElementById('editId').value = '';
-  document.getElementById('title').value = '';
-  document.getElementById('description').value = '';
-  htmlToggle.checked = false;
-  cssToggle.checked = false;
-  jsToggle.checked = false;
-  htmlCode.value = '';
-  cssCode.value = '';
-  jsCode.value = '';
-  htmlCode.disabled = true;
-  cssCode.disabled = true;
-  jsCode.disabled = true;
-  previewContainer.classList.remove('active');
-  previewBtn.textContent = '👁 Перегляд';
-};
+if (closeModalBtn && modal) {
+  closeModalBtn.onclick = function() { modal.classList.remove('active'); };
+}
+if (cancelBtn && modal) {
+  cancelBtn.onclick = function() { modal.classList.remove('active'); };
+}
+if (modal) {
+  modal.onclick = function(e) { if (e.target === modal) modal.classList.remove('active'); };
+}
 
-closeModalBtn.onclick = function() { modal.classList.remove('active'); };
-cancelBtn.onclick = function() { modal.classList.remove('active'); };
-modal.onclick = function(e) { if (e.target === modal) modal.classList.remove('active'); };
+if (previewBtn && previewFrame && previewContainer && htmlCode && cssCode && jsCode) {
+  previewBtn.onclick = function() {
+    var html = htmlCode.value;
+    var css = cssCode.value;
+    var js = jsCode.value;
+    
+    if (!html && !css && !js) { alert('Введіть хоча б один код!'); return; }
+    
+    var combinedHTML = '<!DOCTYPE html><html><head><style>' + (css || 'body{font-family:Arial;margin:20px;}') + '</style></head><body>' + (html || '') + '<script>try{' + (js || '') + '}catch(e){console.error(e);}<\/script></body></html>';
+    
+    previewFrame.srcdoc = combinedHTML;
+    previewContainer.classList.add('active');
+    previewBtn.textContent = '👁 Закрити';
+  };
+}
 
-previewBtn.onclick = function() {
-  var html = htmlCode.value;
-  var css = cssCode.value;
-  var js = jsCode.value;
-  
-  if (!html && !css && !js) { alert('Введіть хоча б один код!'); return; }
-  
-  var combinedHTML = '<!DOCTYPE html><html><head><style>' + (css || 'body{font-family:Arial;margin:20px;}') + '</style></head><body>' + (html || '') + '<script>try{' + (js || '') + '}catch(e){console.error(e);}<\/script></body></html>';
-  
-  previewFrame.srcdoc = combinedHTML;
-  previewContainer.classList.add('active');
-  previewBtn.textContent = '👁 Закрити';
-};
-
-form.onsubmit = function(e) {
+if (form) {
+  form.onsubmit = function(e) {
   e.preventDefault();
   var editId = document.getElementById('editId').value;
   var title = document.getElementById('title').value.trim();
@@ -291,6 +338,7 @@ form.onsubmit = function(e) {
       });
   }
 };
+}
 
 function renderCheatsheets() {
   var searchTerm = searchInput.value.toLowerCase().trim();
@@ -349,13 +397,13 @@ function renderCheatsheets() {
       html += '<div class="cheatsheet-card__header">';
       html += '<h3 class="cheatsheet-card__title">' + escapeHtml(cs.title) + '</h3>';
       html += '<div class="cheatsheet-card__actions">';
-      html += '<button class="cheatsheet-card__action-btn" onclick="viewPreview(' + cs.id + ')" title="Перегляд">👁</button>';
-      html += '<button class="cheatsheet-card__action-btn" onclick="editItem(' + cs.id + ')" title="Редагувати">✏</button>';
-      html += '<button class="cheatsheet-card__action-btn delete" onclick="deleteItem(' + cs.id + ')" title="Видалити">🗑</button>';
+      html += '<button type="button" class="cheatsheet-card__action-btn" data-action="view" data-id="' + cs.id + '" title="Перегляд">👁</button>';
+      html += '<button type="button" class="cheatsheet-card__action-btn" data-action="edit" data-id="' + cs.id + '" title="Редагувати">✏</button>';
+      html += '<button type="button" class="cheatsheet-card__action-btn delete" data-action="delete" data-id="' + cs.id + '" title="Видалити">🗑</button>';
       html += '</div></div>';
       html += '<div class="cheatsheet-card__body">';
       html += '<div class="type-badges-container" style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;">' + badges + '</div>';
-      html += '<iframe srcdoc="' + previewHtml.replace(/"/g, '&quot;') + '" style="width:100%;height:400px;border:1px solid #ddd;border-radius:5px;"></iframe>';
+      // html += '<iframe srcdoc="' + previewHtml.replace(/"/g, '&quot;') + '" style="width:100%;height:400px;border:1px solid #ddd;border-radius:5px;"></iframe>';
       if (cs.description) {
         html += '<div class="cheatsheet-card__description">' + escapeHtml(cs.description) + '</div>';
       }
@@ -369,12 +417,36 @@ function renderCheatsheets() {
   });
 }
 
-filterBtns.forEach(function(btn) { 
-  btn.onclick = function() { 
-    currentFilter = btn.dataset.filter; 
-    renderCheatsheets(); 
-  }; 
-});
+if (filterBtns && filterBtns.length) {
+  filterBtns.forEach(function(btn) { 
+    btn.onclick = function() { 
+      currentFilter = btn.dataset.filter; 
+      renderCheatsheets(); 
+    }; 
+  });
+}
+
+if (grid) {
+  grid.addEventListener('click', function(e) {
+    var target = e.target;
+    if (target.nodeType !== 1) {
+      target = target.parentNode;
+    }
+    var button = target && target.closest ? target.closest('button[data-action]') : null;
+    if (!button) return;
+
+    var id = button.dataset.id;
+    if (!id) return;
+
+    if (button.dataset.action === 'view') {
+      viewPreview(id);
+    } else if (button.dataset.action === 'edit') {
+      editItem(id);
+    } else if (button.dataset.action === 'delete') {
+      deleteItem(id);
+    }
+  });
+}
 
 window.viewPreview = function(id) {
   var item = cheatsheets.find(function(cs) { return cs.id == id; });

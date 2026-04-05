@@ -5,7 +5,8 @@ const path = require('path');
 const os = require('os');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || '0.0.0.0';
 
 // Middleware - allow connections from local network
 app.use(cors({
@@ -136,7 +137,7 @@ app.post('/api/cheatsheets/save', (req, res) => {
 
 // Start server
 const localIP = getLocalIP();
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, HOST, () => {
   console.log('');
   console.log('========================================');
   console.log('  WEP-Blocknot Server запущено!');

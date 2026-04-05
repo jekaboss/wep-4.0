@@ -86,7 +86,7 @@
   </div>
 
   <script>
-    const API_URL = 'http://localhost:3000/api';
+    const API_URL = (window.location.protocol.startsWith('http') ? window.location.origin : 'http://localhost:3000') + '/api';
     const SERVER_BAT = 'start-server.bat';
 
     // Check if server is running

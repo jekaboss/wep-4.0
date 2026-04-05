@@ -65,7 +65,7 @@
 
   <script>
     var target = window.location.search.substring(1) || 'index.html';
-    var API_URL = 'http://localhost:3000/api';
+    var API_URL = (window.location.protocol.startsWith('http') ? window.location.origin : 'http://localhost:3000') + '/api';
     var checkCount = 0;
     var maxChecks = 20;
 
